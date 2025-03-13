@@ -145,7 +145,7 @@ jobs:
       uses: unifreq/openwrt_packit@master
       env:
         OPENWRT_ARMVIRT: openwrt/bin/targets/*/*/immortalwrt-armsr-armv8-generic-rootfs.tar.gz
-        KERNEL_VERSION_NAME: 5.15.176
+        KERNEL_VERSION_NAME: 6.6.81
         KERNEL_AUTO_LATEST: false
         PACKAGE_SOC: s905d
         WHOAMI: fightroad
@@ -156,7 +156,7 @@ jobs:
       uses: ncipollo/release-action@main
       if: ${{ env.PACKAGED_STATUS == 'success' }} && !cancelled()
       with:
-        tag: immortalwrt_N1_${{ env.PACKAGED_OUTPUTDATE }}
+        tag: immortalwrt_N1_10.10.10.2_${{ env.PACKAGED_OUTPUTDATE }}
         artifacts: /opt/openwrt_packit/output/*
         allowUpdates: true
         token: ${{ secrets.GITHUB_TOKEN }}
@@ -164,9 +164,9 @@ jobs:
           基于immortalwrt openwrt构建
           首次使用建议全新刷写
           * 基本信息
-          IP: 192.168.2.2
+          IP: 10.10.10.2
           账户: root
-          密码: 空
+          密码: password
           
     - name: Delete old releases
       uses: dev-drprasad/delete-older-releases@master
