@@ -156,7 +156,7 @@ jobs:
       uses: ncipollo/release-action@main
       if: ${{ env.PACKAGED_STATUS == 'success' }} && !cancelled()
       with:
-        tag: immortalwrt_N1_10.10.10.2_${{ env.PACKAGED_OUTPUTDATE }}
+        tag: immortalwrt_N1_192.168.20.2_${{ env.PACKAGED_OUTPUTDATE }}
         artifacts: /opt/openwrt_packit/output/*
         allowUpdates: true
         token: ${{ secrets.GITHUB_TOKEN }}
@@ -164,7 +164,7 @@ jobs:
           基于immortalwrt openwrt构建
           首次使用建议全新刷写
           * 基本信息
-          IP: 10.10.10.2
+          IP: 192.168.20.2
           账户: root
           密码: password
           
